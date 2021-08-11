@@ -3,7 +3,8 @@ from catboost import CatBoostRegressor
 import pandas as pd
 import pickle
 import yaml
-from model_training import train_model
+
+# from model_training import train_model
 
 
 @st.cache
@@ -63,10 +64,10 @@ if st.button(label="Calcular"):
     with open("memoria.csv", "a") as f:
         f.writelines(f"{bairro},{area},{quartos},{banheiros},{garagens},{preco}\n")
 
-if st.button(label="Re-treinar"):
-    training_results = train_model()
-    st.image("./report/residuals.png")
-    st.image("./report/shap.png")
-    st.table(pd.DataFrame(training_results.items(), columns=["metric", "value"]))
-    feature_importance = pd.read_csv("./report/feature_importance.csv")
-    st.table(feature_importance)
+# if st.button(label="Re-treinar"):
+#    training_results = train_model()
+#    st.image("./report/residuals.png")
+#    st.image("./report/shap.png")
+#    st.table(pd.DataFrame(training_results.items(), columns=["metric", "value"]))
+#    feature_importance = pd.read_csv("./report/feature_importance.csv")
+#    st.table(feature_importance)
