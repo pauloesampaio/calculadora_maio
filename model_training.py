@@ -10,7 +10,6 @@ from yellowbrick.regressor import ResidualsPlot
 import matplotlib.pyplot as plt
 import yaml
 import pickle
-import os
 
 
 def train_model(config_path="./config/config.yml"):
